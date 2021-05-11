@@ -22,12 +22,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // reconnaissance du geste
         swipeGestureRecognizer = UISwipeGestureRecognizer (target :self, action : #selector(swipeToShare))
         guard let swipeGestureRecognizer = swipeGestureRecognizer else {return}
         swipeGestureRecognizer.direction = UISwipeGestureRecognizer.Direction.up
         
         shareView.addGestureRecognizer(swipeGestureRecognizer)
         NotificationCenter.default.addObserver(self, selector: #selector(setupSwipeDirection), name: UIDevice.orientationDidChangeNotification, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     /// direction du swipe selon l'orientation du telephone
@@ -41,7 +46,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     
     ///animation du swipe
     @objc private func swipeToShare() {
-        /// permet ld'ouvrir la page de partage
+        // permet ld'ouvrir la page de partage
         let activityController = UIActivityViewController(activityItems: [shareView.image], applicationActivities: nil)
         
         switch swipeGestureRecognizer?.direction {
@@ -57,13 +62,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
         default :
             break
         }
-        /// remise en place de la vue a sa position initialle
+        // remise en place de la vue a sa position initialle
+
         activityController.completionWithItemsHandler = {_, _, _, _ in UIView.animate(withDuration: 1) {
             self.shareView.transform = .identity}}
-        ///sauvegarde dans la bibliotheque
+        //sauvegarde dans la bibliotheque
         present(activityController, animated: true, completion: nil)
-        
-        
     }
     
     ///permet la selection et l'acces dans le bibliotheque
