@@ -145,7 +145,7 @@
                                             <constraint firstAttribute="width" secondItem="7qA-K0-r41" secondAttribute="height" multiplier="1:1" id="yAO-f5-cLK"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="Layout 1"/>
-                                        <state key="selected" image="Selection"/>
+                                        <state key="selected" image="Selected"/>
                                         <connections>
                                             <action selector="layoutButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qtg-JY-rfH"/>
                                         </connections>
@@ -157,7 +157,7 @@
                                             <constraint firstAttribute="width" secondItem="psm-4J-tGl" secondAttribute="height" multiplier="1:1" id="vGa-GX-dhG"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="Layout 2"/>
-                                        <state key="selected" image="Selection"/>
+                                        <state key="selected" image="Selected"/>
                                         <connections>
                                             <action selector="layoutButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UuC-Rp-Tc9"/>
                                         </connections>
@@ -169,7 +169,7 @@
                                             <constraint firstAttribute="width" secondItem="VCQ-vQ-6ue" secondAttribute="height" multiplier="1:1" id="JPw-lG-1Xf"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="Layout 3"/>
-                                        <state key="selected" image="Selection"/>
+                                        <state key="selected" image="Selected"/>
                                         <connections>
                                             <action selector="layoutButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a8y-Xh-FcI"/>
                                         </connections>
@@ -255,6 +255,6 @@
         <image name="Layout 2" width="80" height="80"/>
         <image name="Layout 3" width="80" height="80"/>
         <image name="Plus" width="40" height="40"/>
-        <image name="Selection" width="72" height="80"/>
+        <image name="Selected" width="80" height="80"/>
     </resources>
 </document>
