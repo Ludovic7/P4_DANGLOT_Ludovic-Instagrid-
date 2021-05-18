@@ -82,6 +82,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     func imagePickerController (_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any] ) {
         let image = info[ UIImagePickerController.InfoKey.originalImage] as! UIImage
         butonSelectedbuton.setImage(image, for: .normal)
+        butonSelectedbuton.imageView?.contentMode = .scaleAspectFill
         picker.dismiss ( animated: true, completion: nil )
     }
     
